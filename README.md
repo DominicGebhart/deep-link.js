@@ -1,4 +1,4 @@
-# DEPRECATION NOTICE
+# NOTICE
 
 This library is no longer maintained. The mobile app platform is now leaning towards a standard where regular URLs (more or less) redirect to an app. This involves hosting separate files, something this library cannot do for you.
 
@@ -8,14 +8,14 @@ This library is no longer maintained. The mobile app platform is now leaning tow
 I discourage using this library and encourage using this new standard instead.
 
 # deep-link.js
-
+Fork from Tim Severien
 **deep-link.js** is designed to add deep links to the web in an easy and stable way.
 
 Mobile deep links are links that refer to apps instead of another web page. Opening things in apps can vastly improve a user’s experience.
 
 ## Install
 
-	bower install deep-link.js
+	npm install deep-link.js
 
 ## Usage
 
@@ -27,6 +27,10 @@ deep-link.js is licensed under the MIT license.
 [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
 
 # Changelog
+
+## 0.1.2
+- Replaced "visibly.js" polyfill with Browser APIs
+- removed old android intent open
 
 ## 0.1.1
 - Add intent for modern Android browsers
