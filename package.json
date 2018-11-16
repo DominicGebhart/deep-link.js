@@ -1,7 +1,7 @@
 {
   "name": "deep-link.js",
-  "version": "0.1.1",
-  "description": "A tool designer for mobile deep links",
+  "version": "0.1.2",
+  "description": "A tool designer for mobile deep links, original by Tim Severien",
   "main": "deep-link.js",
   "repository": {
     "type": "git",
@@ -14,15 +14,11 @@
     "app"
   ],
   "author": {
-    "name": "Tim Severien",
-    "email": "timseverien@gmail.com",
-    "url": "http://timseverien.com"
+    "name": "Dominic Gebhart",
+    "email": "dominic.gebhart@russmedia.com",
+    "url": "https://www.russmedia.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/timseverien/deep-link.js/issues"
-  },
-  "homepage": "https://timseverien.com/projects/deep-link/",
   "devDependencies": {
     "gulp": "^3.8.10",
     "gulp-bump": "^0.1.11",

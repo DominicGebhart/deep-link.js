@@ -69,13 +69,8 @@
 	  var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navigator.userAgent)[1]));
 	  var isAndroidBrowser = isAndroidMobile && appleWebKitVersion !== null && appleWebKitVersion > 500;
 
-	  if(isAndroidBrowser) {
-	    return 'intent:' + app.split(':')[1] + '#Intent;scheme=' + scheme + ';package=' +
-	      store + ';S.browser_fallback_url=' + encodeURI(href);
-	  }
-	  else {
-	    return app;
-	  }
+
+	  return app;
 	}
 
 	// Parse a single element

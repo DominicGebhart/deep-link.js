@@ -13,7 +13,7 @@
 	 * VARIABLES
 	 ****************************************************************/
 
-	var delay = 1200,
+	var delay = 1500,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
@@ -69,13 +69,13 @@
 	  var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navigator.userAgent)[1]));
 	  var isAndroidBrowser = isAndroidMobile && appleWebKitVersion !== null && appleWebKitVersion > 500;
 
-	  if(isAndroidBrowser) {
-	    return 'intent:' + app.split(':')[1] + '#Intent;scheme=' + scheme + ';package=' +
-	      store + ';S.browser_fallback_url=' + encodeURI(href);
-	  }
-	  else {
+	//   if(isAndroidBrowser) {
+	//     return 'intent:' + app.split(':')[1] + '#Intent;scheme=' + scheme + ';package=' +
+	//       store + ';S.browser_fallback_url=' + encodeURI(href);
+	//   }
+	//   else {
 	    return app;
-	  }
+	//   }
 	}
 
 	// Parse a single element
