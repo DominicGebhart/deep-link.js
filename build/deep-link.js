@@ -13,7 +13,7 @@
 	 * VARIABLES
 	 ****************************************************************/
 
-	var delay = 1500,
+	var delay = 1200,
 		OSs = {
 			// Sometimes, Windows Phone contains Android in it’s UA
 			// To prevent it from overlapping with Android, try Windows first
@@ -32,6 +32,18 @@
 				test: /iPhone|iPad|iPod/i
 			}
 		};
+
+		var hidden, visibilityChange; 
+		if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+			hidden = "hidden";
+			visibilityChange = "visibilitychange";
+		} else if (typeof document.msHidden !== "undefined") {
+			hidden = "msHidden";
+			visibilityChange = "msvisibilitychange";
+		} else if (typeof document.webkitHidden !== "undefined") {
+			hidden = "webkitHidden";
+			visibilityChange = "webkitvisibilitychange";
+		}
 
 
 	/****************************************************************
@@ -69,13 +81,8 @@
 	  var appleWebKitVersion = (resultAppleWebKitRegEx === null ? null : parseFloat(regExAppleWebKit.exec(navigator.userAgent)[1]));
 	  var isAndroidBrowser = isAndroidMobile && appleWebKitVersion !== null && appleWebKitVersion > 500;
 
-	//   if(isAndroidBrowser) {
-	//     return 'intent:' + app.split(':')[1] + '#Intent;scheme=' + scheme + ';package=' +
-	//       store + ';S.browser_fallback_url=' + encodeURI(href);
-	//   }
-	//   else {
-	    return app;
-	//   }
+
+	  return app;
 	}
 
 	// Parse a single element
@@ -143,14 +150,19 @@
 			el.style.display = 'none';
 		}
 
-		// Triggered on blur
-		visibly.onHidden(function() {
-			if(!clicked || !timeout) return;
+		document.addEventListener(
+			visibilityChange,
+			() => {
+				if (document[hidden]) {
+					if(!clicked || !timeout) return;
 
-			// Reset everything
-			timeout = clearInterval(timeout);
-			clicked = false;
-		});
+					// Reset everything
+					timeout = clearInterval(timeout);
+					clicked = false;
+				}
+			},
+			false
+		);
 	};
 
 

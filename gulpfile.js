@@ -21,7 +21,7 @@ gulp.task('build', function() {
 	.pipe(gulp.dest('build'))
 
 	// Minify
-	.pipe(uglify({ preserveComments: 'some' }))
-	.pipe(rename('deep-link.min.js'))
-	.pipe(gulp.dest('build'));
+	// .pipe(uglify({ preserveComments: 'some' }))
+	// .pipe(rename('deep-link.min.js'))
+	// .pipe(gulp.dest('build'));
 });
