@@ -12,7 +12,6 @@ gulp.task('bump', function() {
 
 gulp.task('build', function() {
 	return gulp.src([
-		'bower_components/visibly.js/visibly.js',
 		'src/**/*.js'
 	])
 
