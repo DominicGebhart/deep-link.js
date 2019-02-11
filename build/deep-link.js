@@ -105,6 +105,7 @@
 
 		if(!app) return;
 		if(!href) el.setAttribute('href', app);
+		el.setAttribute('parsed', true);
 
 		if(OS && app) {
 			// Hijack click event
@@ -168,8 +169,19 @@
 	 * INITIALIZE
 	 ****************************************************************/
 
-	var elements = document.getElementsByTagName('a'),
+	function deepInit()
+	{
+		var elements = document.getElementsByTagName('a'),
 		i = elements.length;
 
-	while(i--) parseElement(elements[i]);
+		while(i--){
+			if (null === elements[i].getAttribute('parsed')) {
+				parseElement(elements[i]);
+			}
+		} 
+	}
+
+	deepInit();
+
+
 })();

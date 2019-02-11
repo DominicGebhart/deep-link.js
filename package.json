@@ -1,6 +1,6 @@
 {
   "name": "deep-link.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A tool designer for mobile deep links, original by Tim Severien",
   "main": "deep-link.js",
   "repository": {

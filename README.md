@@ -13,10 +13,6 @@ Fork from Tim Severien
 
 Mobile deep links are links that refer to apps instead of another web page. Opening things in apps can vastly improve a user’s experience.
 
-## Install
-
-	npm install deep-link.js
-
 ## Usage
 
 See [https://timseverien.com/deep-link.js/](https://timseverien.com/deep-link.js/)
@@ -27,6 +23,9 @@ deep-link.js is licensed under the MIT license.
 [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
 
 # Changelog
+
+## 0.1.3
+- Add Support for Links created after first load with init() function
 
 ## 0.1.2
 - Replaced "visibly.js" polyfill with Browser APIs
